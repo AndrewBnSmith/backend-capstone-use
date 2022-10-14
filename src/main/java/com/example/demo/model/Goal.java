@@ -22,10 +22,18 @@ public class Goal {
 	private double goalTotal;
 	@Column(name = "contribute")
 	private double contribute;
-	@Column(name = "fromDate")
-	private String fromDate;
-	@Column(name = "toDate")
-	private String toDate;
+	@Column(name = "years")
+	private String years;
+	@Column(name = "image")
+	private String image;
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 	public double getGoalTotal() {
 		return goalTotal;
@@ -43,20 +51,12 @@ public class Goal {
 		this.contribute = contribute;
 	}
 
-	public String getFromDate() {
-		return fromDate;
+	public String getYears() {
+		return years;
 	}
 
-	public void setFromDate(String fromDate) {
-		this.fromDate = fromDate;
-	}
-
-	public String getToDate() {
-		return toDate;
-	}
-
-	public void setToDate(String toDate) {
-		this.toDate = toDate;
+	public void setYears(String years) {
+		this.years = years;
 	}
 
 	public long getId() {

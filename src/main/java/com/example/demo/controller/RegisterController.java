@@ -66,9 +66,14 @@ public class RegisterController {
 		public ResponseEntity<User> updateUserInfo(@PathVariable Long id , @RequestBody User userDetails) {
 			User user = userRepository.findById(id)
 					.orElseThrow(() -> new ResourceNotFoundException("User not found with id :" + id));
+			user.setFirstName(userDetails.getFirstName());
+			user.setLastName(userDetails.getLastName());
 			user.setUsername(userDetails.getUsername());
+			user.setJobTitle(userDetails.getJobTitle());
+			user.setPhoneNumber(userDetails.getPhoneNumber());
 			user.setEmail(userDetails.getEmail());
 			user.setPassword(userDetails.getPassword());
+
 			
 			User updatedUser = userRepository.save(user);
 			return ResponseEntity.ok(updatedUser);

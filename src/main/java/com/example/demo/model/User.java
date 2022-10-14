@@ -9,28 +9,66 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@Column(name = "firstName")
+	private String firstName;
+	@Column(name = "lastName")
+	private String lastName;
 	@Column(name = "username")
 	private String username;
 	@Column(name = "email")
 	private String email;
 	@Column(name = "password")
 	private String password;
+	@Column(name = "phoneNumber")
+	private String phoneNumber;
+	@Column(name = "jobTitle")
+	private String jobTitle;
 	
 	public User() {
 		
 	}
-	
-	public User(String username, String email, String password) {
-		this.username = username;
-		this.email = email;
-		this.password = password;
-	}
-	
-	public User(long id, String username, String email, String password) {
+
+	public User(long id, String firstName, String lastName, String username, String email, String password, String phoneNumber, String jobTitle) {
 		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.username = username;
 		this.email = email;
 		this.password = password;
+		this.phoneNumber = phoneNumber;
+		this.jobTitle = jobTitle;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getJobTitle() {
+		return jobTitle;
+	}
+
+	public void setJobTitle(String jobTitle) {
+		this.jobTitle = jobTitle;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public long getId() {
